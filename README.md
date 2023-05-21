@@ -1,18 +1,22 @@
 ## Predicting Employee Attrition: A Logistic Regression Approach
-
+![](High-employee-turnover.jpg)
 #### Overview
 This project focuses on developing a machine learning model to predict employee attrition in a company. The aim is to provide insights into the factors that contribute to employee turnover and to create a predictive tool that can assist in identifying employees at risk of leaving.
 
 #### Dataset
-The analysis is based on a comprehensive dataset obtained from Kaggle via this link. The dataset contains 1470 observations and 35 features related to employees, such as demographics, job satisfaction, performance metrics, and engagement factors. It also includes a binary target variable indicating whether an employee has left the company or not.
+The analysis is based on a comprehensive dataset obtained from Kaggle via this [link](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset). The dataset contains 1470 observations and 35 features related to employees, such as demographics, job satisfaction, performance metrics, and engagement factors. It also includes a binary target variable indicating whether an employee has left the company or not.
 
 ### Methodology
 
 #### Exploratory Data Analysis (EDA) 
 Conducted a thorough analysis of the dataset to understand the distribution, relationships, and patterns within the data. Explored key features and identified potential predictors of attrition. <br>
 Below are some of the insights discovered:
-*	The target variable is highly imbalance with an imbalance ratio of 0.19.
+*	The target variable is highly imbalance with an imbalance ratio of 0.19. 
+
+![](attrition.png)
 *	Most attrition occurred in employees that earned less $5000 per month.
+
+![](attrition v age v income.png)
 *	In terms of frequency of travel, the employees that travel rarely accounts for more attrition (65.7%).
 *	41% of employees who left the firm held a bachelor's degree, the highest percentage, followed by 24% who hold a master's degree.
 *	Nearly two-thirds of departed employee are male.
@@ -27,7 +31,8 @@ The features in the dataset were reduced from 35 to 22 using stepwise regression
 As reported earlier, the target variable is highly imbalance. In imbalanced datasets, the majority class tends to dominate the learning process. As a result, the model may become biased towards predicting the majority class, leading to poor performance on the minority class. This is particularly problematic when the minority class is of interest, which in our case is the employees that left. To handle this imbalance, the Synthetic Minority Oversampling Technique (SMOTE) was employed. SMOTE is specifically designed to increase the representation of the minority class by generating synthetic examples. The technique was applied on the training data alone.
 
 #### Model Development
-Utilized Logistic Regression model to build predictive models for employee attrition. Four models were built:
+Utilized Logistic Regression model to build predictive models for employee attrition. Logistic regression is used to predict the likelihood of a categorical dependent variable. Logistic regression outputs the probability that the class will be equal to 1. <br>
+Four models were built:
 +	Model 1: Unbalanced data with all features
 +	Model 2: Unbalanced data with the 22 selected features
 +	Model 3: Balanced data with all features
